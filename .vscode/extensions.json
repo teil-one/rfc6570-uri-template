@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "mike-co.import-sorter",
+    "formulahendry.auto-rename-tag",
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint",
+    "ghaschel.vscode-angular-html",
+    "orta.vscode-jest"
+  ]
+}

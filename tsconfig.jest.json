@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+
+  "compilerOptions": {
+    // Fix code coverage in Jest
+    "sourceMap": true,
+
+    // Remove TS151001 warning from ts-jest
+    "esModuleInterop": true,
+
+    // Allow importing from JSON
+    "resolveJsonModule": true
+  }
+}

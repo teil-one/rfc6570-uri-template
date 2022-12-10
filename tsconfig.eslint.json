@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+
+  // Don't exclude tests to avoid the 'TSConfig does not include this file' error in ESLint
+  "exclude": ["node_modules"],
+  "include": ["src", "test"]
+}

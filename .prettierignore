@@ -1,0 +1,9 @@
+build
+coverage
+build
+lib
+src/grammar.js
+test/uritemplate-test
+index.js
+index.cjs
+index.d.ts

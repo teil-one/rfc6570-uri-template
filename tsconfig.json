@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "node16",
+    "target": "ES2016",
+    "module": "ES2015",
     "sourceMap": false,
     "declaration": true,
     "outDir": "./build",
     "strict": true,
     "strictPropertyInitialization": false,
-    "removeComments": true
+    "removeComments": true,
+    "moduleResolution": "Node"
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts"]

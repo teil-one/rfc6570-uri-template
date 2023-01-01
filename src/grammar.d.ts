@@ -1,4 +1,4 @@
-import { ExpressionData } from './grammar-types.js';
+import { ExpressionData } from './grammar-types';
 
 declare function peg$SyntaxError(message: any, expected: any, found: any, location: any): Error;
 declare class peg$SyntaxError {

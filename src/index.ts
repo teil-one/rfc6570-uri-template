@@ -1,5 +1,5 @@
-import { OperatorType, VariableData, ExpressionData } from './grammar-types.js';
-import { parse as parseWithGrammar } from './grammar.js';
+import { OperatorType, VariableData, ExpressionData } from './grammar-types';
+import { parse as parseWithGrammar, SyntaxError } from './grammar';
 
 export function parse(input: string): Template {
   return new Template(input);
@@ -21,7 +21,7 @@ class Template {
     for (const item of this.items) {
       if (typeof item === 'string') {
         if (item.charCodeAt(0) <= 0x20 || ['%', '<', '>', '\\', '^', '`', '{', '|', '}', '', '', ''].includes(item)) {
-          throw new SyntaxError(`Invalid literal: ${item}`);
+          throw SyntaxError(`Invalid literal: ${item}`, null, item, null);
         }
 
         result += item;
@@ -133,7 +133,7 @@ class ExpansionConfig {
         this.addName = true;
         break;
       default:
-        throw new SyntaxError(`Invalid expression operator`);
+        throw SyntaxError('Invalid expression operator', null, op, null);
     }
   }
 
@@ -232,7 +232,7 @@ class Variable {
   }
 }
 
-class ExpandingError extends Error {}
+export class ExpandingError extends Error {}
 
 function isEmptyValue(data: unknown): boolean {
   return (

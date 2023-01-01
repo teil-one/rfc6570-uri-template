@@ -2,6 +2,9 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
+    // Use Node.js native ECMAScript Module support
+    "module": "node16",
+
     // Fix code coverage in Jest
     "sourceMap": true,
 

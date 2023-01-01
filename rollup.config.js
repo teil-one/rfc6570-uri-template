@@ -10,7 +10,7 @@ export default [
     },
     plugins: [
       terser({
-        ecma: 2015,
+        ecma: 2016,
         mangle: true
       })
     ]
@@ -23,7 +23,7 @@ export default [
     },
     plugins: [
       terser({
-        ecma: 2015,
+        ecma: 2016,
         mangle: true
       })
     ]

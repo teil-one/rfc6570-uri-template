@@ -16,7 +16,7 @@
     "build:grammar": "shx mkdir -p ./build && peggy ./src/grammar.pegjs --format es -o ./build/grammar.js",
     "build:app": "tsc && shx cp ./src/*.d.ts ./build",
     "bundle": "rollup -c rollup.config.js",
-    "build": "rimraf lib && rimraf build && npm run build:grammar && npm run build:app & npm run bundle",
+    "build": "rimraf lib && rimraf build && npm run build:grammar && npm run build:app && npm run bundle",
     "lint": "npx eslint .",
     "prettier": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",

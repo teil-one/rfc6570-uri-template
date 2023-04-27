@@ -17,11 +17,12 @@
     "build:app": "tsc && shx cp ./src/*.d.ts ./build",
     "bundle": "rollup -c rollup.config.js",
     "build": "rimraf lib && rimraf build && npm run build:grammar && npm run build:app && npm run bundle",
-    "lint": "npx eslint .",
-    "prettier": "npx prettier --write .",
-    "prettier:check": "npx prettier --check .",
+    "lint": "eslint .",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
     "jest": "peggy ./src/grammar.pegjs --format es -o ./src/grammar.js && cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "test": "npm run lint && npm run prettier:check && npm run jest",
+    "pretest": "npm run lint && npm run prettier:check",
+    "test": "npm run jest",
     "prepublishOnly": "npm test",
     "prepare": "npm run build && shx ln -f lib/index.js index.js && shx ln -f lib/index.d.ts index.d.ts && shx ln -f lib/index.cjs index.cjs",
     "postpack": "shx rm index.js && shx rm index.d.ts && shx rm index.cjs",
@@ -71,6 +72,6 @@
     "typescript": "^4.9.3"
   },
   "volta": {
-    "node": "18.12.1"
+    "node": "18.16.0"
   }
 }
